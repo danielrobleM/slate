@@ -1,32 +1,93 @@
 ---
-title: API Reference
+title: eFlog API
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - JavaScript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - HTMLCODE 
   - errors
-
 search: true
 ---
 
-# Introduction
+# Introduction to eFlog API. 
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+eFlog API is divided into **3** module : 
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+* IOS AP
+* Report API
+* Administrator API.
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The basic **Endpoint** structure is
 
+`eflog-api.aeronauticalsolutions.aero/VERSION_API/TYPE_API/`.
+
+For example, this url is for a authentication method from the IOS API version 1.0
+
+`eflog-api.aeronauticalsolutions.aero/v1/ios/login`
+# iOS API
+the iOS API provide access to user authentication,update local datebase and add new reports. 
+## Authentication
+> ### Data Parameters
+
+```json
+  {
+    "username": "CREW_PIC_NAME",
+    "password": "*********"
+  }
+```
+
+>### Succes Response
+
+```json
+{
+  "meta": [
+    {
+      "code": "HTML 1.1 CODE",
+      "errorType": ""
+    }
+  ]
+  "response"{
+	"user_profile_Information":""  
+  }
+}
+```
+>### Error  Response
+
+```json
+{
+  "meta": [
+    {
+      "code": "HTML 1.1 CODES",
+      "errorType": ""
+    }
+  ]
+  "response"{
+  }
+}
+```
+
+`eflog-api.aeronauticalsolutions.aero/v1/ios/login`
+
+Returns profile information for a given user.
+
+HTTP Method	 |  Requiered  Authentication 
+--------- | -----------
+POST | NO
+
+### Understanding authentication through amazon Cognite
+
+<aside class="warning">For more infomation about error type and html code, go to these sections.
+</aside>
+# Report API 
+# Administrator API
 # Authentication
+eFlog  has **3** types of authentication, **IOS Authentication** , **Report Authentication** and **Administrator Authentication**. 
 
-> To authorize, use this code:
 
 ```ruby
 require 'kittn'
@@ -48,7 +109,7 @@ curl "api_endpoint_here"
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
 
 Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
