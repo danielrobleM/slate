@@ -80,7 +80,7 @@ HTTP Method	 |  Requiered  Authentication
 POST | NO
 
 ### Understanding authentication through amazon Cognite
-The after valided user and password, the backend conect with amazon cognite to get token Get Credentials For 
+After valided user and password, the backend conect with amazon cognite to get token Get Credentials For 
 our Identity.
 
 To access other API methods, is necessary the token of amazon cognite.
@@ -120,38 +120,6 @@ POST | YES
   }
 }
 ```
-## Update
-
-> ### Data Parameters
-
-```json
-  {
-    "id": "CREW_PIC_ID",
-  }
-```
->### Succes Response
-
-```json
-{
-  "meta": [
-    {
-      "code": "HTML 1.1 CODE",
-      "errorType": ""
-    }
-  ]
-  "response"{
-	"Por":"definir"  
-  }
-}
-```
-`eflog-api.aeronauticalsolutions.aero/v1/ios/update`
-
-Return a Json-object that contains new data to storage on local database.
-
-HTTP Method	 |  Requiered  Authentication 
---------- | -----------
-GET | YES
-
 ## Update
 > ### Data Parameters
 
